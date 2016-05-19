@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * Created by yqb7 on 5/17/16.
  */
-public class seqAnalyzerSpparkAppMain {
+public class SeqAnalyzerSparkAppMain {
 
 
 

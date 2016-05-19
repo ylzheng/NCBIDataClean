@@ -4,7 +4,7 @@ package seqDataClean;
  * Created by yqb7 on 5/6/16.
  */
 /**This file function is load the genbank file and save the details*/
-public class genbankfile {
+public class Genbankfile {
     public String locus;
     public String definition;
     public String accession;
@@ -21,11 +21,11 @@ public class genbankfile {
     public String feature;
     public String sourceFeature;
     public String originSequence;
-    public genbankfile(){}
-    public genbankfile(String locus,
-            String definition, String accession, String version, String giNumber, String keyWords,
-            String sourceOrganism, String organism, String reference, String authors, String title,
-            String journal, String comment, String feature, String sourceFeature, String originSequence){
+    public Genbankfile(){}
+    public Genbankfile(String locus,
+                       String definition, String accession, String version, String giNumber, String keyWords,
+                       String sourceOrganism, String organism, String reference, String authors, String title,
+                       String journal, String comment, String feature, String sourceFeature, String originSequence){
         this.locus = locus;
         this.definition = definition;
         this.accession = accession;

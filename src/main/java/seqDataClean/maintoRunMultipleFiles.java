@@ -9,8 +9,8 @@ import java.io.IOException;
 
 /**This class is used to process multiple files in the same time, because the gb file is
  * too big so divide it into small parts*/
-public class maintoRunMultipleFiles {
-    maintoRunMultipleFiles(String inputDirectory, String outputFile) throws IOException {
+public class MaintoRunMultipleFiles {
+    MaintoRunMultipleFiles(String inputDirectory, String outputFile) throws IOException {
         File inputDir = new File(inputDirectory);
         File[] inputFiles = inputDir.listFiles();
         /*for(int i = 0; i < inputFiles.length; i++){
@@ -27,12 +27,12 @@ public class maintoRunMultipleFiles {
                 System.out.println(eachFile.getName());
                 String fileName = eachFile.getPath();
                 String[] fileNameNoGB = eachFile.getName().split("\\.");
-                seqDataClean obect = new seqDataClean(fileName, outputFile + "_" + fileNameNoGB[0]);
+                SeqDataClean obect = new SeqDataClean(fileName, outputFile + "_" + fileNameNoGB[0]);
                 System.out.println("finish one file");
             }
         }
     }
     public static void main(String[] args) throws IOException {
-        maintoRunMultipleFiles ob = new maintoRunMultipleFiles(args[0], args[1]) ;
+        MaintoRunMultipleFiles ob = new MaintoRunMultipleFiles(args[0], args[1]) ;
     }
 }

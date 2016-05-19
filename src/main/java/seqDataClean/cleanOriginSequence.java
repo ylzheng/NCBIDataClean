@@ -7,7 +7,7 @@ import org.apache.commons.lang3.math.NumberUtils;
  */
 /*This class is used to clean the sequence data under origin in genbank file and was called
 * by seqDataClean class*/
-public class cleanOriginSequence {
+public class CleanOriginSequence {
     public static String cleanOriginSequence(String sequence){
         String[] seqArray = sequence.split(" ");
         String cleanSequence = "";
