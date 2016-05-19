@@ -15,14 +15,33 @@ public class SparkGenBank {
     JavaSparkContext sc = new JavaSparkContext(conf);
     SQLContext sqlContext = new SQLContext(sc);
 
-    // Step 2: Load genbank XML input to Spark DataFrame
-    DataFrame df = sqlContext.read()
+    // Step 2.1: Load GenBank TinySeq XML input to Spark DataFrame
+    DataFrame dfTinySeq = sqlContext.read()
         .format("com.databricks.spark.xml")
         .option("rowTag", "TSeq")
         .load("src/main/resources/genbank.fasta.xml");
 
-    // Step 3: Write extracted information to xml output file
-    df.select("TSeq_gi", "TSeq_sequence").write()
+    dfTinySeq.printSchema();
+
+    // Step 2.2: Load GenBank XML input to Spark DataFrame
+    DataFrame dfXML = sqlContext.read()
+        .format("com.databricks.spark.xml")
+        .option("rowTag", "Seq-entry")
+        .load("src/main/resources/genbank.xml");
+
+    dfXML.printSchema();
+
+    // Step 2.3: Load GenBank XML input to Spark DataFrame
+    DataFrame dfINSDSeq = sqlContext.read()
+        .format("com.databricks.spark.xml")
+        .option("rowTag", "INSDSeq")
+        .load("src/main/resources/genbank.gbc.xml");
+
+    dfINSDSeq.printSchema();
+
+
+    // Step 3: Write the selected entries from TinySeq data source to XML output file
+    dfTinySeq.select("TSeq_gi", "TSeq_sequence").write()
         .format("com.databricks.spark.xml")
         .option("rootTag", "TSeqSet")
         .option("rowTag", "TSeq")
