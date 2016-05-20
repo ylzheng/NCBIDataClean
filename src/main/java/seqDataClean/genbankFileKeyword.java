@@ -6,10 +6,10 @@ import java.util.Map;
 /**
  * Created by yqb7 on 5/9/16.
  */
-public class genbankFileKeyword {
+public class GenbankFileKeyword {
     public static Map<String, String> genbankFileKeyword = new HashMap<String, String>();
     public static Map<String, Integer> gbFileKeywordIndex = new HashMap<String, Integer>();
-    public genbankFileKeyword(){
+    public GenbankFileKeyword(){
         genbankFileKeyword.put("LOCUS", "locus"); //0
         genbankFileKeyword.put("DEFINITION", "definition"); //1
         genbankFileKeyword.put("ACCESSION", "accession");//2
